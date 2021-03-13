@@ -1,0 +1,44 @@
+<h1>{{ title }} app is running!</h1>
+
+<p>Estamos no ano de: {{ year }}</p>
+
+<h2>Dados do produto:</h2>
+
+<ul>
+    <li>Nome: {{ product.productName }}</li>
+    <li>Preço: {{ product.productPrice }}</li>
+    <li>Cor: {{ product.productColor }}</li>
+</ul>
+
+<h2>Customers:</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>E-mail</th>
+            <th>CPF</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>{{ customers[0].nome }}</td>
+            <td>{{ customers[0].email }}</td>
+            <td>{{ customers[0].cpf }}</td>
+        </tr>
+        <tr>
+            <td>{{ customers[1].nome }}</td>
+            <td>{{ customers[1].email }}</td>
+            <td>{{ customers[1].cpf }}</td>
+        </tr>
+        <tr>
+            <td>{{ customers[2].nome }}</td>
+            <td>{{ customers[2].email }}</td>
+            <td>{{ customers[2].cpf }}</td>
+        </tr>
+    </tbody>
+</table>
+
+<my-component></my-component>
+
+<app-login></app-login>
