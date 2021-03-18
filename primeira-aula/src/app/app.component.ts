@@ -12,6 +12,7 @@ export class AppComponent implements OnInit {
   year : number
   product : Product
   customers : Customer[]
+  anyText : string = 'any text'
 
   constructor() {
     console.log('estou dentro do construtor')
@@ -33,6 +34,11 @@ export class AppComponent implements OnInit {
       customer.email = 'customer' + i + '@gmail.com'
       this.customers.push(customer)
     }
+  }
+
+  mudouProduto(evento: any) {
+    console.log(evento)
+    this.anyText = `Novo valor: ${evento.value}`
   }
 
 }

@@ -42,3 +42,10 @@
 <my-component></my-component>
 
 <app-login></app-login>
+
+<app-user-detail 
+    [productDetail]="product"
+    (productChange)="mudouProduto($event)">
+</app-user-detail>
+
+<p>{{ anyText }}</p>
