@@ -1,0 +1,23 @@
+<h1>Univas</h1>
+
+<ul>
+  <li>
+    {{ customerOne.name }} -
+    <input type="button" value="Selecionar" 
+          (click)="selectCustomer(customerOne)">
+  </li>
+  <li>
+    {{ customerTwo.name }} - 
+    <input type="button" value="Selecionar" 
+          (click)="selectCustomer(customerTwo)">
+  </li>
+  <li>
+    {{ customerThree.name }} -
+    <input type="button" value="Selecionar"   
+          (click)="selectCustomer(customerThree)">
+  </li>
+</ul>
+
+
+<app-customer-detail [customer]="customerSelected">
+</app-customer-detail>
