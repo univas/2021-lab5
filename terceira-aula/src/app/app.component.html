@@ -1,0 +1,27 @@
+<h1>Formulário</h1>
+
+<form #userForm="ngForm" (ngSubmit)="saveData(userForm)">
+  <div>
+    <label for="name">Nome:</label>
+    <input type="text" id="name" name="name" required 
+      [(ngModel)]="usuario.name" #name="ngModel" minlength="4">
+
+    <div *ngIf="name.invalid && (name.dirty || name.touched)">
+      <p *ngIf="name.errors.required">Campo obrigatório</p>
+      <p *ngIf="name.errors.minlength">Tamanho minimo não atingido</p>
+    </div>
+  </div>
+
+  <div>
+    <label for="email">E-mail:</label>
+    <input type="email" id="email" name="email" required
+      [(ngModel)]="usuario.email" #email="ngModel" minlength="8">
+
+    <div *ngIf="email.invalid && (email.dirty || email.touched)">
+      <p *ngIf="email.errors.required">Campo obrigatório</p>
+      <p *ngIf="email.errors.minlength">Tamanho minimo não atingido</p>
+    </div>
+  </div>
+
+  <input type="submit" value="Salvar">
+</form>
