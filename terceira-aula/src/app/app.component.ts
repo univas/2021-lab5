@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Student } from './student';
 
 @Component({
   selector: 'app-root',
@@ -7,15 +8,15 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   
-  usuario = {
-    name: null,
-    email: null
-  }
+  student: Student = new Student()
+  students: Student[] = []
 
   saveData(form) {
     console.log('Salvando os dados...')
-    console.log(this.usuario)
-    console.log(form)
+    
+    this.students.push(this.student)
+    this.student = new Student()
+    console.log(this.students)
   }
 
 }
