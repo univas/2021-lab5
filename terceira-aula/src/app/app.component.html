@@ -23,13 +23,28 @@
     </div>
   </div>
 
-  <input type="submit" value="Salvar">
+  <input type="submit" value="Salvar" [disabled]="userForm.invalid">
 </form>
 
-<h2>Estudantes salvos:</h2>
+<div *ngIf="students.length > 0">
+  <h2>Estudantes salvos:</h2>
 
-<ul>
-  <li *ngFor="let xuxa of students">
-    {{ xuxa.name }} - {{ xuxa.email }}
-  </li>
-</ul>
+  <table>
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>E-mail</th>
+        <th>Editar</th>
+        <th>Remover</th>
+      </tr>
+    </thead>
+    <tbody> 
+      <tr *ngFor="let stu of students">
+        <td>{{ stu.name }}</td>
+        <td>{{ stu.email }}</td>
+        <td><input type="button" value="Editar" (click)="editStudent(stu)"></td>
+        <td><input type="button" value="Remover" (click)="removeStudent(stu)"></td>
+      </tr>
+    </tbody>
+  </table>  
+</div>

@@ -14,9 +14,30 @@ export class AppComponent {
   saveData(form) {
     console.log('Salvando os dados...')
     
-    this.students.push(this.student)
+    if (!this.student.id) {
+      this.student.id = (new Date()).getTime()
+      this.students.push(this.student)
+    
+    } else {
+      let oldStudent = this.students.find(s => s.id === this.student.id)
+      oldStudent.name = this.student.name
+      oldStudent.email = this.student.email
+    }
+    
     this.student = new Student()
-    console.log(this.students)
+    form.resetForm()
   }
 
+  editStudent(stu: Student) {
+    this.student = new Student(
+      stu.id,
+      stu.name,
+      stu.email
+    )
+  }
+
+  removeStudent(stu: Student) {
+    let index = this.students.findIndex(s => s.id === stu.id)
+    this.students.splice(index, 1)
+  }
 }
