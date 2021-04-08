@@ -1,0 +1,15 @@
+div.photo {
+  width: 250px;
+  max-height: 250px;
+  margin: 0 auto;
+  border: 1px solid black;
+}
+
+p {
+  text-align: center;
+}
+
+div.photo img {
+  max-width: 200px;
+  max-height: 150px;
+}

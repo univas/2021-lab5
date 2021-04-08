@@ -1,0 +1,33 @@
+<h1>Instaglam</h1>
+
+<h2>Adicionar foto:</h2>
+
+<form #myForm="ngForm" (ngSubmit)="addPhoto(myForm)">
+  
+  <div>
+    <label>Título:</label>
+    <input type="text" name="title" [(ngModel)]="currentPhoto.title">
+  </div>
+  <div>
+    <label>Descrição:</label>
+    <input type="text" name="description" [(ngModel)]="currentPhoto.description">
+  </div>
+  <div>
+    <label>Selecione a foto:</label>
+    <input type="file" (change)="onFileChange($event)" name="file" [(ngModel)]="currentPhoto.url">
+  </div>
+  
+  <input type="submit" value="Salvar">
+</form>
+
+<div *ngIf="photoList.length > 0">
+  <h2>Fotos adicionadas:</h2>
+  
+  <div>
+    <div *ngFor="let photo of photoList" class="photo">
+      <p>Título: {{ photo.title }}</p>
+      <img [src]="photo.url">
+      <p>Descrição: {{ photo.description }}</p>
+    </div>
+  </div>
+</div>
