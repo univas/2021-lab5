@@ -7,6 +7,8 @@
       <th>CPF</th>
       <th>Data de Nascimento</th>
       <th>Celular</th>
+      <th>Peso</th>
+      <th>Salário</th>
     </tr>
   </thead>
   <tbody>
@@ -15,7 +17,7 @@
         <p>{{ student.nome | uppercase }}</p>
         <p>{{ student.nome | lowercase }}</p>
       </td>
-      <td>{{ student.cpf | cpf }}</td>
+      <td>{{ student.cpf | cpf : true }}</td>
       <td>
         <p>{{ student.dataNascimento | date : 'short' }}</p>
         <p>{{ student.dataNascimento | date : 'medium' }}</p>
@@ -24,7 +26,9 @@
         <p>{{ student.dataNascimento | date : 'full' | uppercase }}</p>
         <p>{{ student.dataNascimento | date : 'dd-MM---yyyy' }}</p>
       </td>
-      <td>{{ student.celular }}</td>
+      <td>{{ student.celular | telefone : '35' }}</td>
+      <td>{{ student.peso | number }}</td>
+      <td>{{ student.salario | currency }}</td>
     </tr>
   </tbody>
 </table>
