@@ -1,0 +1,26 @@
+<h1>Cadastro de veículo</h1>
+
+<form #veiculoForm (ngSubmit)="saveVeiculo(veiculoForm)">
+  <div>
+    <label for="marca">Marca</label>
+    <input type="text" id="marca" name="marca" #marca [(ngModel)]="newVeiculo.marca">
+  </div>
+  <div>
+    <label for="modelo">Modelo</label>
+    <input type="text" id="modelo" name="modelo" #modelo [(ngModel)]="newVeiculo.modelo">
+  </div>
+  <div>
+    <label for="cor">Cor</label>
+    <input type="text" id="cor" name="cor" #cor [(ngModel)]="newVeiculo.cor">
+  </div>
+  <div>
+    <label for="anoFabricacao">Ano de Fabricação</label>
+    <input type="number" id="anoFabricacao" name="anoFabricacao" #anoFabricaco [(ngModel)]="newVeiculo.anoFabricacao">
+  </div>
+  <div>
+    <label for="anoModelo">Ano do Modelo</label>
+    <input type="text" id="anoModelo" name="anoModelo" #anoModelo [(ngModel)]="newVeiculo.anoModelo">
+  </div>
+
+  <input type="submit" value="Salvar">
+</form>
