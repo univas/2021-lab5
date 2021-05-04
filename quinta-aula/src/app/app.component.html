@@ -1,0 +1,23 @@
+<h1>Cadastro de alunos</h1>
+
+<form>
+  <div>
+    <label>Nome:</label>
+    <input type="text" name="nome" [(ngModel)]="newStudent.nome">
+  </div>
+  <div>
+    <label>E-mail:</label>
+    <input type="email" name="email" [(ngModel)]="newStudent.email">
+  </div>
+  <input type="button" value="Salvar" (click)="save()">
+</form>
+
+<div *ngIf="students.length">
+  <h2>Alunos cadastrados:</h2>
+
+  <ul>
+    <li *ngFor="let stu of students">
+      {{ stu.nome }} - {{ stu.email }}
+    </li>
+  </ul>
+</div>
