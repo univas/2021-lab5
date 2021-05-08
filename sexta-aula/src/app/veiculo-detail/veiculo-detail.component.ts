@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Veiculo } from '../veiculo';
 
 @Component({
@@ -8,6 +8,7 @@ import { Veiculo } from '../veiculo';
 })
 export class VeiculoDetailComponent implements OnInit {
 
+  @Input()
   veiculo: Veiculo
 
   constructor() { }

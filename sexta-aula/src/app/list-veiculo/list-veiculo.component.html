@@ -13,7 +13,8 @@
       <td>{{ veiculo.modelo }}</td>
       <td>{{ veiculo.anoModelo }}</td>
       <td>
-        <input type="button" value="Detalhes">
+        <input type="button" value="Detalhes"
+        (click)="showVeiculoDetail(veiculo.id)">
       </td>
     </tr>
   </tbody>
@@ -23,4 +24,6 @@
   <p>Nenhum veículo cadastro</p>
 </div>
 
-<app-veiculo-detail></app-veiculo-detail>
+<div *ngIf="selectedVeiculo">
+  <app-veiculo-detail [veiculo]="selectedVeiculo"></app-veiculo-detail>
+</div>
