@@ -7,7 +7,8 @@ import { Tela3Component } from './tela3/tela3.component';
 const routes: Routes = [
   { path: 'tela-um', component: Tela1Component },
   { path: 'tela-dois', component: Tela2Component },
-  { path: 'tela-tres' , component: Tela3Component }
+  { path: 'tela-tres/:id' , component: Tela3Component },
+  { path: '', pathMatch: 'full', redirectTo: 'tela-um'}
 ];
 
 @NgModule({

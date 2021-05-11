@@ -1,1 +1,24 @@
-<p>tela2 works!</p>
+<h2>Veículos cadastrados:</h2>
+
+<table *ngIf="veiculos.length > 0">
+  <thead>
+    <tr>
+      <th>Modelo</th>
+      <th>Ano Modelo</th>
+      <th>Detalhes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let veiculo of veiculos">
+      <td>{{ veiculo.modelo }}</td>
+      <td>{{ veiculo.anoModelo }}</td>
+      <td>
+       <a [routerLink]="['/tela-tres', veiculo.id]">Detalhes</a>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<div *ngIf="veiculos.length === 0">
+  <p>Nenhum veículo cadastro</p>
+</div>

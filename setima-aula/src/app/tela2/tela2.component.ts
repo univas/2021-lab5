@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Veiculo } from '../veiculo';
+import { VeiculoService } from '../veiculo.service';
 
 @Component({
   selector: 'app-tela2',
@@ -7,9 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Tela2Component implements OnInit {
 
-  constructor() { }
+  veiculos: Veiculo[]
+
+  constructor(private veiculoService: VeiculoService) { }
 
   ngOnInit(): void {
+    this.veiculos = this.veiculoService.veiculos
   }
-
 }
