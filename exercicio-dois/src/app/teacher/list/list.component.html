@@ -1,1 +1,16 @@
-<p>teacher list works!</p>
+<h2>Lista de professores:</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Detalhe</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let teacher of teacherList">
+      <td>{{ teacher.nome }}</td>
+      <td><a [routerLink]="['/teacherDetail', teacher.id]">Detalhes</a></td>
+    </tr>
+  </tbody>
+</table>

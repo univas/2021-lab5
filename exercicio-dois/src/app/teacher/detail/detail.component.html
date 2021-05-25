@@ -1,1 +1,13 @@
-<p>detail works!</p>
+<div *ngIf="teacher">
+  <h2>Detalhe do Professor:</h2>
+
+  <ul>
+    <li>Nome: {{ teacher.nome }}</li>
+    <li>CPF: {{ teacher.cpf }}</li>
+    <li>E-mail: {{ teacher.email }}</li>
+  </ul>
+</div>
+
+<div *ngIf="!teacher">
+  <p>Professor não encontrado!</p>
+</div>

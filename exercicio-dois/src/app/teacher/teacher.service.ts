@@ -17,4 +17,8 @@ export class TeacherService {
   save(teacher: Teacher) {
     this.teachers.push(teacher)
   }
+
+  getById(id: number) {
+    return this.teachers.find(t => t.id === id)
+  }
 }

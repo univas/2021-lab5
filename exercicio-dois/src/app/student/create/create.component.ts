@@ -10,13 +10,11 @@ import { StudentService } from '../student.service';
 export class CreateComponent implements OnInit {
 
   student: Student
-  studentList: Student[]
 
   constructor(private studentService: StudentService) { }
 
   ngOnInit(): void {
     this.student = new Student()
-    this.studentList = this.studentService.getAll()
   }
 
   save(myForm) {

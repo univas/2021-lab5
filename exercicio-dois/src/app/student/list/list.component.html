@@ -4,11 +4,13 @@
   <thead>
     <tr>
       <th>Nome</th>
+      <th>Detalhe</th>
     </tr>
   </thead>
   <tbody>
     <tr *ngFor="let student of studentList">
       <td>{{ student.nome }}</td>
+      <td><a [routerLink]="['/studentDetail', student.id]">Detalhes</a></td>
     </tr>
   </tbody>
 </table>

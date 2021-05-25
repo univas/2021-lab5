@@ -4,12 +4,16 @@ import { CreateComponent as StudentCreateComponent } from './student/create/crea
 import { CreateComponent as TeacherCreateComponent } from './teacher/create/create.component';
 import { ListComponent as StudentListComponent } from './student/list/list.component';
 import { ListComponent as TeacherListComponent } from './teacher/list/list.component';
+import { DetailComponent as StudentDetailComponent } from './student/detail/detail.component';
+import { DetailComponent as TeacherDetailComponent } from './teacher/detail/detail.component';
 
 const routes: Routes = [
   { path: 'listStudent', component: StudentListComponent },
   { path: 'createStudent', component: StudentCreateComponent },
+  { path: 'studentDetail/:id', component: StudentDetailComponent },
   { path: 'listTeacher', component: TeacherListComponent },
-  { path: 'createTeacher', component: TeacherCreateComponent }
+  { path: 'createTeacher', component: TeacherCreateComponent },
+  { path: 'teacherDetail/:id', component: TeacherDetailComponent }
 ];
 
 @NgModule({

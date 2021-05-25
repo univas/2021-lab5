@@ -1,1 +1,13 @@
-<p>detail works!</p>
+<div *ngIf="student">
+  <h2>Detalhe do Aluno:</h2>
+
+  <ul>
+    <li>Nome: {{ student.nome }}</li>
+    <li>CPF: {{ student.cpf }}</li>
+    <li>Celular: {{ student.celular }}</li>
+  </ul>
+</div>
+
+<div *ngIf="!student">
+  <p>Aluno não encontrado!</p>
+</div>
