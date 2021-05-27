@@ -10,6 +10,10 @@ import { CreateComponent as TeacherCreateComponent } from './teacher/create/crea
 import { ListComponent as TeacherListComponent } from './teacher/list/list.component';
 import { DetailComponent as TeacherDetailComponent } from './teacher/detail/detail.component';
 import { FormsModule } from '@angular/forms';
+import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
+import { PersonComponent } from './person/person.component';
+import { CreatePersonComponent } from './person/create-person/create-person.component';
+import { ListPersonComponent } from './person/list-person/list-person.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +23,11 @@ import { FormsModule } from '@angular/forms';
     StudentDetailComponent,
     TeacherCreateComponent,
     TeacherListComponent,
-    TeacherDetailComponent
+    TeacherDetailComponent,
+    PagenotfoundComponent,
+    PersonComponent,
+    CreatePersonComponent,
+    ListPersonComponent
   ],
   imports: [
     BrowserModule,
