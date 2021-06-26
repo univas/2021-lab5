@@ -1,0 +1,28 @@
+<h1>Customer</h1>
+
+<form #customerForm (submit)="save(customerForm)">
+  <div>
+    <label for="nome">Nome:</label>
+    <input type="text" name="nome" id="nome" #nome [(ngModel)]="newCustomer.nome">
+  </div>
+  <div>
+    <label for="cpf">CPF:</label>
+    <input type="text" name="cpf" id="cpf" #cpf [(ngModel)]="newCustomer.cpf">
+  </div>
+  <div>
+    <label for="email">E-mail:</label>
+    <input type="email" name="email" id="email" #email [(ngModel)]="newCustomer.email">
+  </div>
+
+  <input type="submit" value="Salvar">
+</form>
+
+
+<h2>Customers</h2>
+
+<ul>
+  <li *ngFor="let c of customers">
+    {{ c.nome }} - {{ c.cpf }} - {{ c.email }} - 
+    <input type="button" value="Remover" (click)="deleteCustomer(c.id)">
+  </li>
+</ul>
