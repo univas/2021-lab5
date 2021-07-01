@@ -1,0 +1,44 @@
+<h1>Cadastro de Faturas</h1>
+
+<form #myForm (submit)="save(myForm)">
+  <div>
+    <label for="customer">Nome do Cliente:</label>
+    <input type="text" name="customer" id="customer" #customer [(ngModel)]="newBill.customer">
+  </div>
+
+  <div>
+    <label for="paymentMethod">Forma de Pagamento:</label>
+    <input type="text" name="paymentMethod" id="paymentMethod" #paymentMethod [(ngModel)]="newBill.paymentMethod">
+  </div>
+
+  <div>
+    <label for="product">Nome do Produto:</label>
+    <input type="text" name="product" id="product" #product [(ngModel)]="newBill.product">
+  </div>
+
+  <div>
+    <label for="amount">Valor:</label>
+    <input type="text" name="amount" id="amount" #amount [(ngModel)]="newBill.amount">
+  </div>
+
+  <input type="submit" value="Salvar">
+</form>
+
+<h2>Consulta faturas</h2>
+
+<form #myForm2 (click)="searchByCustomerName(myForm2)">
+  <div>
+    <label for="customerName">Nome do Cliente:</label>
+    <input type="text" name="customerName" id="customerName" [(ngModel)]="customerName">
+  </div>
+
+  <input type="submit" value="Consultar" (click)="loadData()">
+</form>
+
+<ul>
+  <li *ngFor="let bill of customerBills">
+    {{ bill.customer }} - {{ bill.paymentMethod }} - {{ bill.product }} -
+    {{ bill.amount }}
+    <input type="button" value="Remover" (click)="removeBill(bill.id)">
+  </li>
+</ul>
